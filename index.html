@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Utje, Will You Be Mine?</title>
+    <style>
+        body {
+            background: #ffe6f2;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .sad-popup {
+            display: none;
+            position: fixed;
+            top: 20%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            animation: sadSlide 1s;
+        }
+
+        @keyframes sadSlide {
+            from { transform: translateY(-100vh); }
+            to { transform: translateY(0); }
+        }
+
+        .sad-content {
+            text-align: center;
+        }
+
+        .sad-emoji {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Utjevera Mbura, Will You Be My Valentine?</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="openYesPage()">YES</button>
+            <button id="noBtn" onclick="showSad()">NO</button>
+        </div>
+    </div>
+
+    <div class="sad-popup" id="sadPopup">
+        <div class="sad-content">
+            <div class="sad-emoji">😢</div>
+            <h2>My heart is breaking...</h2>
+            <p>Please reconsider my beautiful Utje!</p>
+            <button onclick="closeSad()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function openYesPage() {
+            window.open('yes.html', '_blank');
+        }
+
+        function showSad() {
+            document.getElementById('sadPopup').style.display = 'block';
+        }
+
+        function closeSad() {
+            document.getElementById('sadPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
